@@ -88,7 +88,7 @@ namespace Pool
 
             if (init)
             {
-                ref TObject instance = ref Get(hole);
+                ref TObject instance = ref Get(obj);
                 instance = new TObject();
             }
 
@@ -101,7 +101,7 @@ namespace Pool
         public ref TObject Get(uint index)
         {
             if (!_bitmap.Get(index))
-                throw new InvalidOperationException("Cannot access an allocated object from the pool.");
+                throw new InvalidOperationException("Cannot access an unallocated object from the pool.");
 
             if (index < 16)
             {
