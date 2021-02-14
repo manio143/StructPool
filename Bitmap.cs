@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace Pool
 {
-    public class Bitmap
+    internal class Bitmap
     {
         private BitArray _array;
         public Bitmap(int capacity)
